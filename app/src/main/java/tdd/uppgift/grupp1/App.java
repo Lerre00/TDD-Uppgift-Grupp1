@@ -10,8 +10,8 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
-        Car car = new Car(true, true, true);
-
+        Car car = new Car(true, true, false, true);
+        System.out.println(car);
 
     }
 }

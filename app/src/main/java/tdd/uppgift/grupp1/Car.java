@@ -4,11 +4,21 @@ public class Car {
     private boolean headlights;
     private boolean headlightsOn;
     private boolean headlightsMode;
+    private boolean rearlights;
 
-    public Car(boolean headlights, boolean headlightsOn, boolean headlightsMode) {
+    public Car(boolean headlights, boolean headlightsOn, boolean headlightsMode, boolean rearlights) {
         this.headlights = headlights;
         this.headlightsOn = headlightsOn;
         this.headlightsMode = headlightsMode;
+        this.rearlights = rearlights;
+    }
+
+    public boolean isRearlights() {
+        return rearlights;
+    }
+
+    public void setRearlights(boolean rearlights) {
+        this.rearlights = rearlights;
     }
 
     public String isHeadlightsMode() {
@@ -42,7 +52,7 @@ public class Car {
         return "Car{" +
                 "headlights=" + headlights +
                 ", headlightsOn=" + headlightsOn +
-                ", headlightsMode=" + headlightsMode +
+                ", headlightsMode=" + isHeadlightsMode() +
                 '}';
     }
 }

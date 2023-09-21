@@ -10,7 +10,7 @@ class CarTest {
 
     @BeforeEach
     void setUp(){
-        car = new Car(true, true, true);
+        car = new Car(true, true, true, true);
     }
 
     @Test
@@ -36,5 +36,10 @@ class CarTest {
         assertEquals(car.isHeadlightsMode(), "Full beam");
         car.setHeadlightsMode(false);
         assertEquals(car.isHeadlightsMode(), "Half beam");
+    }
+
+    @Test
+    void testIsRearlights() {
+        assertTrue(car.isRearlights());
     }
 }
