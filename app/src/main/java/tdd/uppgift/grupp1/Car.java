@@ -122,13 +122,20 @@ public class Car {
         return acceleration;
     }
 
-    public double calculateSpeed(double time) {
+    public double calculateSpeed(double time, double currentSpeed) {
         if(acceleration.equals(Acceleration.GAS)){
-            if(time * 10 > 180){
+            if(time * 10 + currentSpeed> 180){
                 return 180;
             }
-            return time * 10;
+            return time * 10 + currentSpeed;
         }
-        else return 0;
+        //if break is stepped on
+        else {
+            if(currentSpeed - time * 10 < 0 ){
+                return 0;
+            }else{
+                return currentSpeed - time * 10;
+            }
+        }
     }
 }
