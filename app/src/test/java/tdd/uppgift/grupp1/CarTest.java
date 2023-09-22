@@ -174,4 +174,16 @@ class CarTest {
         car.setGear(Gear.REVERSE);
         assertEquals(car.calculateDistanceTraveled(7200,100),-200);
     }
+
+    @Test
+    void assertThatBreaklightsAreOff(){
+        car.stepOnGas();
+        assertEquals(car.getRearLights(), false);
+    }
+
+    @Test
+    void assertThatBreaklightsAreOn(){
+        car.stepOnGas();
+        assertEquals(car.getRearLights(), true);
+    }
 }
