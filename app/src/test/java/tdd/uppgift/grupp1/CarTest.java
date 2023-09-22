@@ -150,4 +150,9 @@ class CarTest {
         car.stepOnBreak();
         assertEquals(car.calculateSpeed(10.0,180),80.0);
     }
+    @Test
+    void assertThatCarGoing180kmhAndBreaksFor20SecondsGoes0kmh(){
+        car.stepOnBreak();
+        assertEquals(car.calculateSpeed(20.0,180),0.0);
+    }
 }

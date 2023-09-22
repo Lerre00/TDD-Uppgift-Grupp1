@@ -132,7 +132,8 @@ public class Car {
         //if break is stepped on
         else {
             if(currentSpeed - time * 10 < 0 ){
-                return 0;
+                System.out.println("BILEN BACKAR NU");
+                return currentSpeed - time * 10;
             }else{
                 return currentSpeed - time * 10;
             }
