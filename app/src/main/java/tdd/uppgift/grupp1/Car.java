@@ -121,4 +121,11 @@ public class Car {
     public Acceleration getAcceleration(){
         return acceleration;
     }
+
+    public double calculateSpeed(double time) {
+        if(acceleration.equals(Acceleration.GAS)){
+            return time * 10;
+        }
+        else return 0;
+    }
 }
