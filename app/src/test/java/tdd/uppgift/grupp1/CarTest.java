@@ -2,6 +2,7 @@ package tdd.uppgift.grupp1;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import tdd.uppgift.grupp1.Enums.Acceleration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,7 +16,8 @@ class CarTest {
                 true,
                 false,
                 false,
-                false);
+                false,
+                Acceleration.BREAK);
     }
 
     @Test
@@ -118,11 +120,12 @@ class CarTest {
     @Test
     void stateIsGAS(){
         car.stepOnGas();
-        assertThat(car.gas = "GAS");
+        assertEquals(car.getAcceleration(), Acceleration.valueOf("GAS"));
+
     }
     @Test
     void stateIsBREAK(){
         car.stepOnBreak();
-        assertThat(car.gas = "BREAK");
+        assertEquals(car.getAcceleration(), Acceleration.valueOf("BREAK"));
     }
 }

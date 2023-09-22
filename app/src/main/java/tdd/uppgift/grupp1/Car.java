@@ -1,5 +1,7 @@
 package tdd.uppgift.grupp1;
 
+import tdd.uppgift.grupp1.Enums.Acceleration;
+
 public class Car {
     private boolean headlights;
     private boolean headlightsOn;
@@ -7,13 +9,15 @@ public class Car {
     private boolean rearlights;
     private boolean engine;
     private boolean hazardLights;
+    private Acceleration acceleration;
 
     public Car(boolean headlights,
                boolean headlightsOn,
                boolean headlightsMode,
                boolean rearlights,
                boolean engine,
-               boolean hazardLights) {
+               boolean hazardLights,
+               Acceleration acceleration) {
 
         this.headlights = headlights;
         this.headlightsOn = headlightsOn;
@@ -21,6 +25,7 @@ public class Car {
         this.rearlights = rearlights;
         this.engine = engine;
         this.hazardLights = hazardLights;
+        this.acceleration = acceleration;
     }
 
     public boolean isRearlights() {
@@ -103,5 +108,17 @@ public class Car {
 
     public void turnOffHazardLights() {
         hazardLights = false;
+    }
+
+    public void stepOnGas() {
+        acceleration = Acceleration.GAS;
+    }
+
+    public void stepOnBreak() {
+        acceleration = Acceleration.BREAK;
+    }
+
+    public Acceleration getAcceleration(){
+        return acceleration;
     }
 }
