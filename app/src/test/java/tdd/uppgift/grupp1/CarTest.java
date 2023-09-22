@@ -14,32 +14,40 @@ class CarTest {
     }
 
     @Test
-    void isCar() {
+    void assertIsCarExpectingTrue() {
         assertEquals(Car.class, car.getClass());
         //assertNotNull(car);
     }
 
     @Test
-    void testIsHeadlights() {
+    void assertIsHeadlightExpectingTrue() {
         assertTrue(car.isHeadlights());
     }
 
     @Test
-    void testIsHeadlightsOn() {
+    void assertIsHeadlightsOnExpectingTrue() {
         assertTrue(car.isHeadlightsOn());
+    }
+
+    @Test
+    void assertIsHeadlightsOffExpectingTrue() {
         car.setHeadlightsOn(false);
         assertFalse(car.isHeadlightsOn());
     }
 
     @Test
-    void testIsHeadlightsMode() {
+    void assertIsHeadlilghtsFullBeamExpectingTrue() {
         assertEquals(car.isHeadlightsMode(), "Full beam");
+    }
+
+    @Test
+    void assertIsHeadlilghtsHalfBeamExpectingTrue() {
         car.setHeadlightsMode(false);
         assertEquals(car.isHeadlightsMode(), "Half beam");
     }
 
     @Test
-    void testIsRearlights() {
+    void assertIsRearLightsExpectingTrue() {
         assertTrue(car.isRearlights());
     }
 }
