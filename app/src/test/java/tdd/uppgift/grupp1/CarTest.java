@@ -14,11 +14,12 @@ class CarTest {
                 false,
                 true,
                 false,
+                false,
                 false);
     }
 
     @Test
-    void assertIsCarExpectingTrue() {
+    void assertCarIsObjectOfCarExpectingCar() {
         assertEquals(Car.class, car.getClass());
     }
 
@@ -60,21 +61,21 @@ class CarTest {
 
     @Test
     void assertThatEngineIsOnExpectingFalse(){
-        assertEquals(car.isEngineOn(), false);
+        assertFalse(car.isEngineOn());
     }
 
     @Test
     void assertThatEngineStartsExpectingTrue(){
-        assertEquals(car.isEngineOn(), false);
+        assertFalse(car.isEngineOn());
         car.startEngine();
-        assertEquals(car.isEngineOn(),true);
+        assertTrue(car.isEngineOn());
     }
     @Test
     void assertThatEngineStopsExpectingTrue(){
         car.startEngine();
-        assertEquals(car.isEngineOn(), true);
+        assertTrue(car.isEngineOn());
         car.stopEngine();
-        assertEquals(car.isEngineOn(),false);
+        assertFalse(car.isEngineOn());
     }
 
     @Test
@@ -82,15 +83,15 @@ class CarTest {
         car.startEngine();
         car.turnOnHeadlights();
         car.turnOnRearlights();
-        assertEquals(car.isEngineOn(),true);
-        assertEquals(car.isHeadlights(),true);
-        assertEquals(car.isRearlights(),true);
+        assertTrue(car.isEngineOn());
+        assertTrue(car.isHeadlightsOn());
+        assertTrue(car.isRearlights());
     }
     @Test
     void assertThatEngineAndLightsAreOffExpectingFalse(){
-        assertEquals(car.isEngineOn(),false);
-        assertEquals(car.isHeadlightsOn(),false);
-        assertEquals(car.isRearlights(),false);
+        assertFalse(car.isEngineOn());
+        assertFalse(car.isHeadlightsOn());
+        assertFalse(car.isRearlights());
     }
     @Test
     void assertThatEngineAndLightsAreOffExpectingFalseAfterTurningOnEngine(){
@@ -98,8 +99,19 @@ class CarTest {
         car.turnOnHeadlights();
         car.turnOnRearlights();
         car.stopEngine();
-        assertEquals(car.isEngineOn(),false);
-        assertEquals(car.isHeadlightsOn(),false);
-        assertEquals(car.isRearlights(),false);
+        assertFalse(car.isEngineOn());
+        assertFalse(car.isHeadlightsOn());
+        assertFalse(car.isRearlights());
+    }
+
+    @Test
+    void assertThatHazardLightsAreOffExpectingFalse(){
+        assertFalse(car.isHazardLightsOn());
+    }
+
+    @Test
+    void assertThatHazardLightsTurnOnWhilstEngineIsOffExpectingTrue(){
+        car.turnOnHazardLights();
+        assertTrue(car.isHazardLightsOn());
     }
 }
