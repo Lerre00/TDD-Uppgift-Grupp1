@@ -128,4 +128,14 @@ class CarTest {
         car.stepOnBreak();
         assertEquals(car.getAcceleration(), Acceleration.valueOf("BREAK"));
     }
+
+    @Test
+    void assertThatCarAcceleratedFor20SecondsGoesAt200kmh(){
+        car.stepOnGas();
+        assertEquals(car.calculateSpeed(20),200);
+    }
+    @Test
+    void assertThatCarAcceleratedFor20SecondsGoesAt0kmhWhilstAccelerationIsBreak(){
+        assertEquals(car.calculateSpeed(20),0);
+    }
 }
