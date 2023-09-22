@@ -5,12 +5,14 @@ public class Car {
     private boolean headlightsOn;
     private boolean headlightsMode;
     private boolean rearlights;
+    private boolean engine;
 
-    public Car(boolean headlights, boolean headlightsOn, boolean headlightsMode, boolean rearlights) {
+    public Car(boolean headlights, boolean headlightsOn, boolean headlightsMode, boolean rearlights, boolean engine) {
         this.headlights = headlights;
         this.headlightsOn = headlightsOn;
         this.headlightsMode = headlightsMode;
         this.rearlights = rearlights;
+        this.engine = engine;
     }
 
     public boolean isRearlights() {
@@ -54,5 +56,17 @@ public class Car {
                 ", headlightsOn=" + headlightsOn +
                 ", headlightsMode=" + isHeadlightsMode() +
                 '}';
+    }
+
+    public boolean isEngineOn() {
+        return engine;
+    }
+
+    public void startEngine() {
+        engine = true;
+    }
+
+    public void stopEngine() {
+        engine = false;
     }
 }

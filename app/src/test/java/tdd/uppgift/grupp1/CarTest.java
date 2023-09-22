@@ -10,7 +10,7 @@ class CarTest {
 
     @BeforeEach
     void setUp(){
-        car = new Car(true, true, true, true);
+        car = new Car(true, true, true, true,false);
     }
 
     @Test
@@ -49,5 +49,24 @@ class CarTest {
     @Test
     void assertIsRearLightsExpectingTrue() {
         assertTrue(car.isRearlights());
+    }
+
+    @Test
+    void assertThatEngineIsOnExpectingFalse(){
+        assertEquals(car.isEngineOn(), false);
+    }
+
+    @Test
+    void assertThatEngineStartsExpectingTrue(){
+        assertEquals(car.isEngineOn(), false);
+        car.startEngine();
+        assertEquals(car.isEngineOn(),true);
+    }
+    @Test
+    void assertThatEngineStopsExpectingTrue(){
+        car.startEngine();
+        assertEquals(car.isEngineOn(), true);
+        car.stopEngine();
+        assertEquals(car.isEngineOn(),false);
     }
 }
