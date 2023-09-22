@@ -3,6 +3,7 @@ package tdd.uppgift.grupp1;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import tdd.uppgift.grupp1.Enums.Acceleration;
+import tdd.uppgift.grupp1.Enums.Gear;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -132,27 +133,45 @@ class CarTest {
     @Test
     void assertThatCarAcceleratedFor20SecondsGoesAt180kmh(){
         car.stepOnGas();
+        car.setGear(Gear.DRIVE);
         assertEquals(car.calculateSpeed(20.0,0),180.0);
     }
 
     @Test
     void assertThatCarAcceleratedFor18SecondsGoesAt180kmh(){
         car.stepOnGas();
+        car.setGear(Gear.REVERSE);
         assertEquals(car.calculateSpeed(18.0,0),180.0);
     }
     @Test
     void assertThatCarAcceleratedFor9SecondsGoesAt90kmh(){
         car.stepOnGas();
+        car.setGear(Gear.DRIVE);
         assertEquals(car.calculateSpeed(9.0,0),90.0);
     }
     @Test
     void assertThatCarGoing180kmhAndBreaksFor10SecondsGoes80kmh(){
         car.stepOnBreak();
+        car.setGear(Gear.REVERSE);
         assertEquals(car.calculateSpeed(10.0,180),80.0);
     }
     @Test
     void assertThatCarGoing180kmhAndBreaksFor20SecondsGoes0kmh(){
         car.stepOnBreak();
+        car.setGear(Gear.DRIVE);
         assertEquals(car.calculateSpeed(20.0,180),0.0);
+    }
+
+    @Test
+    void assertThatCarIsGoingForwardExpecting200(){
+        car.stepOnGas();
+        car.setGear(Gear.DRIVE);
+        assertEquals(car.calculateDistanceTraveled(7200,100),200);
+    }
+    @Test
+    void assertThatCarIsGoingBackwardsExpectingNegative200(){
+        car.stepOnGas();
+        car.setGear(Gear.REVERSE);
+        assertEquals(car.calculateDistanceTraveled(7200,100),-200);
     }
 }

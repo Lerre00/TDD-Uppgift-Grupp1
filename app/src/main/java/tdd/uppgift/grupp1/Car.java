@@ -1,6 +1,7 @@
 package tdd.uppgift.grupp1;
 
 import tdd.uppgift.grupp1.Enums.Acceleration;
+import tdd.uppgift.grupp1.Enums.Gear;
 
 public class Car {
     private boolean headlights;
@@ -10,6 +11,7 @@ public class Car {
     private boolean engine;
     private boolean hazardLights;
     private Acceleration acceleration;
+    private Gear gear;
 
     public Car(boolean headlights,
                boolean headlightsOn,
@@ -137,5 +139,17 @@ public class Car {
                 return currentSpeed - time * 10;
             }
         }
+    }
+    public void setGear(Gear gear) {
+        this.gear = gear;
+    }
+
+    public double calculateDistanceTraveled(double time, double speed){
+        if (gear.equals(Gear.DRIVE)){
+            //car is moving forward
+            return time/3600 * speed;
+        }
+            //car is moving backwards
+        return -(time/3600 * speed);
     }
 }
