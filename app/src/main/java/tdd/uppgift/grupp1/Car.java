@@ -124,6 +124,9 @@ public class Car {
 
     public double calculateSpeed(double time) {
         if(acceleration.equals(Acceleration.GAS)){
+            if(time * 10 > 180){
+                return 180;
+            }
             return time * 10;
         }
         else return 0;

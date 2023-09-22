@@ -130,9 +130,20 @@ class CarTest {
     }
 
     @Test
-    void assertThatCarAcceleratedFor20SecondsGoesAt200kmh(){
+    void assertThatCarAcceleratedFor20SecondsGoesAt180kmh(){
         car.stepOnGas();
-        assertEquals(car.calculateSpeed(20.0),200.0);
+        assertEquals(car.calculateSpeed(20.0),180.0);
+    }
+
+    @Test
+    void assertThatCarAcceleratedFor18SecondsGoesAt180kmh(){
+        car.stepOnGas();
+        assertEquals(car.calculateSpeed(18.0),180.0);
+    }
+    @Test
+    void assertThatCarAcceleratedFor9SecondsGoesAt90kmh(){
+        car.stepOnGas();
+        assertEquals(car.calculateSpeed(9.0),90.0);
     }
     @Test
     void assertThatCarAcceleratedFor20SecondsGoesAt0kmhWhilstAccelerationIsBreak(){
