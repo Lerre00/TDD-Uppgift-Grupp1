@@ -19,8 +19,11 @@ public class Car {
         return rearlights;
     }
 
-    public void setRearlights(boolean rearlights) {
-        this.rearlights = rearlights;
+    public void turnOnRearlights() {
+        rearlights = true;
+    }
+    public void turnOffRearlights() {
+        rearlights = false;
     }
 
     public String isHeadlightsMode() {
@@ -37,10 +40,12 @@ public class Car {
         return headlightsOn;
     }
 
-    public void setHeadlightsOn(boolean headlightsOn) {
-        this.headlightsOn = headlightsOn;
+    public void turnOnHeadlights() {
+        headlightsOn = true;
     }
-
+    public void turnOffHeadlights() {
+        headlightsOn = false;
+    }
     public boolean isHeadlights() {
         return headlights;
     }
@@ -68,5 +73,7 @@ public class Car {
 
     public void stopEngine() {
         engine = false;
+        headlightsOn = false;
+        rearlights = false;
     }
 }
