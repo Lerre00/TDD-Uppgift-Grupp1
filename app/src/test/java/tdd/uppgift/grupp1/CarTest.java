@@ -114,4 +114,15 @@ class CarTest {
         car.turnOnHazardLights();
         assertTrue(car.isHazardLightsOn());
     }
+
+    @Test
+    void stateIsGAS(){
+        car.stepOnGas();
+        assertThat(car.gas = "GAS");
+    }
+    @Test
+    void stateIsBREAK(){
+        car.stepOnBreak();
+        assertThat(car.gas = "BREAK");
+    }
 }
