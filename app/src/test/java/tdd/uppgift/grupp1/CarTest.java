@@ -18,7 +18,8 @@ class CarTest {
                 false,
                 false,
                 false,
-                Acceleration.BREAK);
+                Acceleration.BREAK,
+                false);
     }
 
     @Test
@@ -178,12 +179,12 @@ class CarTest {
     @Test
     void assertThatBreaklightsAreOff(){
         car.stepOnGas();
-        assertEquals(car.getRearLights(), false);
+        assertEquals(car.getBreakLights(), false);
     }
 
     @Test
     void assertThatBreaklightsAreOn(){
-        car.stepOnGas();
-        assertEquals(car.getRearLights(), true);
+        car.stepOnBreak();
+        assertEquals(car.getBreakLights(), true);
     }
 }

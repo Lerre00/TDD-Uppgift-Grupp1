@@ -12,6 +12,7 @@ public class Car {
     private boolean hazardLights;
     private Acceleration acceleration;
     private Gear gear;
+    private boolean breakLights;
 
     public Car(boolean headlights,
                boolean headlightsOn,
@@ -19,7 +20,8 @@ public class Car {
                boolean rearlights,
                boolean engine,
                boolean hazardLights,
-               Acceleration acceleration) {
+               Acceleration acceleration,
+               boolean breakLights) {
 
         this.headlights = headlights;
         this.headlightsOn = headlightsOn;
@@ -28,6 +30,7 @@ public class Car {
         this.engine = engine;
         this.hazardLights = hazardLights;
         this.acceleration = acceleration;
+        this.breakLights = breakLights;
     }
 
     public boolean isRearlights() {
@@ -113,10 +116,12 @@ public class Car {
     }
 
     public void stepOnGas() {
+        breakLights = false;
         acceleration = Acceleration.GAS;
     }
 
     public void stepOnBreak() {
+        breakLights = true;
         acceleration = Acceleration.BREAK;
     }
 
@@ -151,5 +156,9 @@ public class Car {
         }
             //car is moving backwards
         return -(time/3600 * speed);
+    }
+
+    public boolean getBreakLights() {
+        return breakLights;
     }
 }
