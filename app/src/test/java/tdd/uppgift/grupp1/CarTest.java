@@ -20,7 +20,6 @@ class CarTest {
     @Test
     void assertIsCarExpectingTrue() {
         assertEquals(Car.class, car.getClass());
-        //assertNotNull(car);
     }
 
     @Test
@@ -30,6 +29,7 @@ class CarTest {
 
     @Test
     void assertIsHeadlightsOnExpectingTrue() {
+        car.startEngine();
         car.turnOnHeadlights();
         assertTrue(car.isHeadlightsOn());
     }
@@ -53,6 +53,7 @@ class CarTest {
 
     @Test
     void assertIsRearLightsExpectingTrue() {
+        car.startEngine();
         car.turnOnRearlights();
         assertTrue(car.isRearlights());
     }

@@ -20,10 +20,14 @@ public class Car {
     }
 
     public void turnOnRearlights() {
-        rearlights = true;
+        if(engine) {
+            rearlights = true;
+        }
     }
     public void turnOffRearlights() {
-        rearlights = false;
+        if(engine) {
+            rearlights = false;
+        }
     }
 
     public String isHeadlightsMode() {
@@ -41,10 +45,14 @@ public class Car {
     }
 
     public void turnOnHeadlights() {
-        headlightsOn = true;
+        if(engine) {
+            headlightsOn = true;
+        }
     }
     public void turnOffHeadlights() {
-        headlightsOn = false;
+        if(engine) {
+            headlightsOn = false;
+        }
     }
     public boolean isHeadlights() {
         return headlights;
