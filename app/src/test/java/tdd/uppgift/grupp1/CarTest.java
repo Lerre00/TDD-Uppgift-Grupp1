@@ -53,7 +53,7 @@ class CarTest {
     @Test
     void assertIsHeadlilghtsHalfBeamExpectingTrue() {
         car.setHeadlightsMode(false);
-        assertEquals(car.isHeadlightsMode(), "Half beam");
+        assertEquals(car.isHeadlightsMode(), "Half beam fail");
     }
 
     @Test
