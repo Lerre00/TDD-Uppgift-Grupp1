@@ -83,7 +83,7 @@ class CarTest {
     }
 
     @Test
-    void assertThatEngineAndLightsAreOffExpectingTrue(){
+    void assertThatEngineAndLightsAreOnExpectingTrue(){
         car.startEngine();
         car.turnOnHeadlights();
         car.turnOnRearlights();
@@ -92,7 +92,7 @@ class CarTest {
         assertTrue(car.isRearlights());
     }
     @Test
-    void assertThatEngineAndLightsAreOffExpectingFalse(){
+    void assertThatEngineAndLightsAreOnExpectingFalse(){
         assertFalse(car.isEngineOn());
         assertFalse(car.isHeadlightsOn());
         assertFalse(car.isRearlights());
