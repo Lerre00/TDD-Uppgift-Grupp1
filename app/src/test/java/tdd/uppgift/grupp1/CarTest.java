@@ -109,7 +109,7 @@ class CarTest {
     }
 
     @Test
-    void assertThatHazardLightsAreOffExpectingFalse(){
+    void assertThatHazardLightsAreOnExpectingFalse(){
         assertFalse(car.isHazardLightsOn());
     }
 
@@ -120,13 +120,13 @@ class CarTest {
     }
 
     @Test
-    void stateIsGAS(){
+    void assertStateIsGAS(){
         car.stepOnGas();
         assertEquals(car.getAcceleration(), Acceleration.valueOf("GAS"));
 
     }
     @Test
-    void stateIsBREAK(){
+    void assertStateIsBREAK(){
         car.stepOnBreak();
         assertEquals(car.getAcceleration(), Acceleration.valueOf("BREAK"));
     }
@@ -177,13 +177,13 @@ class CarTest {
     }
 
     @Test
-    void assertThatBreaklightsAreOff(){
+    void assertThatBreakLightsAreOnExpectingFalse(){
         car.stepOnGas();
         assertEquals(car.getBreakLights(), false);
     }
 
     @Test
-    void assertThatBreaklightsAreOn(){
+    void assertThatBreaklightsAreOnExpectingTrue(){
         car.stepOnBreak();
         assertEquals(car.getBreakLights(), true);
     }
